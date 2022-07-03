@@ -75,7 +75,7 @@ class Generator:
             
             items = daySelector.curselection()
             for item in range(len(items)):
-                text = '{}-{}-D{}'.format(vialLabel.get("1.0",'end-1c'),bioReactor.get("1.0",'end-1c'),items[item])
+                text = '{}-{}-D{:02d}'.format(vialLabel.get("1.0",'end-1c'),bioReactor.get("1.0",'end-1c'),items[item])
                 if not text in checkBox.get(0, "end"):
                     checkBox.insert(item,text)
                 
@@ -102,8 +102,7 @@ class Generator:
             img.save("{0}QRcode.png".format(sample_name))
             
             ## Notice
-            path = os.getcwd()
-            tk.Label(window,text='QRcode have been successfully generated on path\n {}'.format(path),height=2).place(x=70,y=250)
+            notice()
             
             ##QRcode Button
         qr_code = tk.Button(window,command=QRcode,text='QRcode',width =10).place(x=80,y=290)
@@ -111,14 +110,19 @@ class Generator:
             ##Barcode Function
         def Barcode():
             label = list(checkBox.get(0,'end'))
-            code = self.compress(label)
+            code = label[0]
             img = barcode.get('code39',code)
             sample_name = '{}_{}'.format(vialLabel.get("1.0",'end-1c'),bioReactor.get("1.0",'end-1c'))
             img.save("{0}Barcode".format(sample_name))
             ## Notice
-            path = os.getcwd()
-            tk.Label(window,text='QRcode have been successfully generated on path\n {}'.format(path),height=2).place(x=70,y=250)
+            notice()
+            
 
+        def notice():
+            path = os.getcwd()
+
+            dum = tk.Label(window,text='Label have been successfully generated on path\n {}'.format(path),height=2).place(x=70,y=250)
+            
             ##Barcode Button
         bar_code = tk.Button(window,command=Barcode,text='Barcode',width=10).place(x=250,y=290)
             
