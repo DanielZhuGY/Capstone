@@ -35,6 +35,9 @@ The figure below, is an example of the generation of barcode.
 
 ### 1.3 QRcode Generating Function
 
+QRcode generating function is typically for label generation of a serie of samples. Normally, a series of information consist large amount of repeated information. If we transfer all the information into a QRcode, the graph will be in a messy. Thus, we need to compress the data before transform.
+
+
 <p align="center">
   <img width="300" height="200" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/QRcodeExample.png?raw=true">
   <img width="80" height="80" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/QRcode.png?raw=true">
