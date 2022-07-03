@@ -10,7 +10,7 @@ Purdue University Chem Capstone Project
 |tkinter|Graphical User Interface(GUI)||
 |qrcode|String --> QRcode(PNG)||
 |barcode|String --> Barcode(SVG)||
-|re|Check input validation||
+|re|Check input validation|Pending|
 |os|File path||
 
 ### 1.2 Barcode Generating Function
@@ -35,7 +35,7 @@ The figure below, is an example of the generation of barcode.
 
 ### 1.3 QRcode Generating Function
 
-QRcode generating function is typically for label generation of a serie of samples. Normally, a series of information consist large amount of repeated information. If we transfer all the information into a QRcode, the graph will be in a messy. Thus, we need to compress the data before transform.
+QRcode generating function is typically for label generation of a serie of samples. Normally, a series of information consist large amount of repeated information. If we transfer all the information into a QRcode, the graph will be in a messy. Thus, a compress algorithm is applied before 
 
 
 <p align="center">
