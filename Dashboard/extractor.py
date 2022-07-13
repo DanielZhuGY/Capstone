@@ -117,13 +117,17 @@ class extractor:
 
 
 
-path = os.getcwd()
-dum = []
-file_Names = ['Datasheet_CCC-100-ATF-2L-08','ambrDatasheet']
-for file_Name in file_Names:
-    a = extractor(pd.read_csv('{}/{}.csv'.format(path,file_Name)))
-    dum.append(a.extractInfo())
+def extract(file_Names):
+    path = os.getcwd()
+    dum = []
+
+    
+    for file_Name in file_Names:
+        a = extractor(pd.read_csv('{}/{}.csv'.format(path,file_Name)))
+        dum.append(a.extractInfo())
+    return(dum)
 
 ## Here, dum is what we need
-## Useful info: file_Names, dum
+## Useful info: dum
+## files should be in the same folder with this py file
 
