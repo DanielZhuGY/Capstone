@@ -45,3 +45,34 @@ QRcode generating function is typically for label generation of a serie of sampl
 <p align="center">
   Figure2.QRcode Example
 </p>
+
+## 2. Dashboard for upstream process
+
+A dashboard for biopharmaceutical upstream process is designed which includes 3 main pages. This dashboard enable researchers to observe and compare the trend for each parameter for different samples from different bioreactors within a same graph.
+|Page|Usage|
+|-|-|
+|Dashboard|Enable researchers to observe and compare the trend for each parameter for different samples from different bioreactors within a same graph.|
+|Analysis|Illustrate the correlation coefficient between each two parameters.|
+|barcode|String --> Barcode(SVG)|
+
+## 3. Classifer
+
+If a new sample is sent to the laboratory. Researchers need to do a DOE research to find out the best condition for cells to produce the most product we want (Highest Titer). This process is always costly and time-consuming. Thus, we developed a Big Data Management tool to help researchers to look up the history experiments. Through comparing the data, they might be able to find out some old samples which have close behaviours. In this case, they can use the old samples' parameters as a reference and this can reduce the the number of experiments.
+
+Two kinds of classifer are developed in this capstone project. The first one is based on PCA(Principal Component Analysis) and Logistics Regression, the second one is based on CNN(Convolutional Neural Network).
+
+### First Approach (PCA & Logistic Regression)
+
+PCA is a method to do dimensionality reduction and try to maintain as much information as possible.
+
+<p align="center">
+ <img width="500" height="200" src="http://www.nlpca.org/fig_pca_principal_component_analysis.png">
+</p>
+
+[Source](https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/)
+
+
+### Second Approach (CNN)
+
+
+
