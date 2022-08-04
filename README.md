@@ -51,9 +51,9 @@ QRcode generating function is typically for label generation of a serie of sampl
 A dashboard for biopharmaceutical upstream process is designed which includes 3 main pages. This dashboard enable researchers to observe and compare the trend for each parameter for different samples from different bioreactors within a same graph.
 |Page|Usage|
 |-|-|
-|Dashboard|Enable researchers to observe and compare the trend for each parameter for different samples from different bioreactors within a same graph.|
-|Analysis|Illustrate the correlation coefficient between each two parameters.|
-|barcode|String --> Barcode(SVG)|
+|Dashboard|Enable researchers to observe and conduct comparison the trend for each parameter for different samples from different bioreactors within a same graph.|
+|Analysis|Illustrate the correlation coefficient heatmap between each two parameters.|
+
 
 ## 3. Classifer
 
@@ -71,6 +71,7 @@ PCA is a method to do dimensionality reduction and try to maintain as much infor
 
 [Source](https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/)
 
+The path of the code is Capstone/Classifier/pca&lr.py
 
 ### Second Approach (CNN)
 
