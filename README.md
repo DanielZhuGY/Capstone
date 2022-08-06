@@ -42,8 +42,8 @@ The dashboard system is based on a library called [Dash](https://dash.plotly.com
 |Time series line chart|Empty samples are dropped automatically. Is able to conduct comparison between both different samples as well as different process conditions|
 |Correlation coefficient heat map|Illustrate the correlation coefficient heat map between each two parameters.|</br>
 <p align="center">
-  <img width="250" height="200" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/linechart.png?raw=true">
-  <img width="80" height="80" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/coef.png?raw=true">
+  <img width="500" height="300" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/linechart.png?raw=true">
+  <img width="300" height="300" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/coef.png?raw=true">
 </p>
 
 ## 3. Classifer
@@ -93,12 +93,12 @@ For the CNN model in this research, I imitate the architecture of one of the mos
 One of the data sheets is used as the training set for training our model. Another data sheets is used as the test set to check the accuracy of the classifier. Here comes the result. 
 
 For the Logistic Regression</br>
-<img width="400" height="200" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/logisticRegressionResult.png?raw=true">
+<img width="400" height="200" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/result1.png?raw=true">
 The accuracy is only around 20%
 
 For the Convolutional Neural Network</br>
 
-<img width="400" height="200" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/cnn.png?raw=true">
+<img width="400" height="200" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/result3.png?raw=true">
 The accuracy is 60%
 
 Compare with some other result in the research of convolutional neural network. 60% of accuracy is still not satisfied. One issue is the insufficient of training and testing set. Another issue is the defect of dataset such as some outliers and some missing values.
