@@ -3,17 +3,7 @@ Purdue University ChemE Capstone Project. A big data managment tool for biopharm
 
 ## 1. Label Generator
 
-### 1.1 Libraries
-
-|Name|Application|Note|
-|-|-|-|
-|tkinter|Graphical User Interface(GUI)||
-|qrcode|String --> QRcode(PNG)||
-|barcode|String --> Barcode(SVG)||
-|re|Check input validation|Pending|
-|os|File path||
-
-### 1.2 Barcode Generating Function
+### 1.1 Barcode Generating Function
 
 Barcode generating function is for generating the label of single sample. Information for one sample is limited, we are able to generate label with the same information as the initial status without doing anyother treatment.
 
@@ -33,7 +23,7 @@ The figure below, is an example of the generation of barcode.
   Figure1.Barcode Example
 </p>
 
-### 1.3 QRcode Generating Function
+### 1.2 QRcode Generating Function
 
 QRcode generating function is typically for label generation of a serie of samples. Normally, a series of information consist large amount of repeated information. If we transfer all the information into a QRcode, the graph will be in a messy. Thus, a compress algorithm is applied before 
 
@@ -48,7 +38,7 @@ QRcode generating function is typically for label generation of a serie of sampl
 
 ## 2. Dashboard for upstream process
 
-The dashboard system is based on a library called 'Dash'[??]. Two functions are embedded in the dashboard system.
+The dashboard system is based on a library called [Dash](https://dash.plotly.com/). Two functions are embedded in the dashboard system. Dash library is a powerful 
 |Page|Usage|
 |-|-|
 |Time series line chart|Empty samples are dropped automatically. Is able to conduct comparison between both different samples as well as different process conditions|
@@ -57,34 +47,45 @@ The dashboard system is based on a library called 'Dash'[??]. Two functions are 
 
 ## 3. Classifer
 
-If a new sample is sent to the laboratory. Researchers need to do a DOE research to find out the best condition for cells to produce the most product we want (Highest Titer). This process is always costly and time-consuming. Thus, we developed a Big Data Management tool to help researchers to look up the history experiments. Through comparing the data, they might be able to find out some old samples which have close behaviours. In this case, they can use the old samples' parameters as a reference and this can reduce the the number of experiments.
+Once a new cell is sent to the laboratory, researchers need to do a huge amount of experiments to find out the best condition for the cell to maximize yield(Highest Titer). This process is always costly and time-consuming since there are a lot of variables in the upstream process. Thus, we developed a Big Data Management tool to help researchers to look up the history experiments. Through comparing the data, they are able to find out some old cells which have close behaviours. In this case, they can use the old cells' process data as a reference and  reduce the the number of experiments.
 
-Two kinds of classifer are developed in this capstone project. The first one is based on PCA(Principal Component Analysis) and Logistics Regression, the second one is based on CNN(Convolutional Neural Network).
+Two approaches are tried in this project. The first one is based on Principal Component Analysis and Logistics Regression, the second one is based on Convolutional Neural Network.
 
-### First Approach (PCA & Logistic Regression)
+### PCA & Logistic Regression
 
-PCA is a method to process dimensional reduction and try to maintain as much information as possible. This can reduce the number of calculation later on.
+PCA is a method to process dimensional reduction and maintain as much information as possible. This algorithm can reduce the number of calculation later on.
 
 <p align="center">
  <img width="500" height="200" src="http://www.nlpca.org/fig_pca_principal_component_analysis.png">
 </p>
 
-[Source](https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/)
+[Picture for principal component analysis convert a 3D data into a 2D data](https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/)
 
-Logistic Regression is one of the most popular method to build a classifier. It can be seen as to concatenate a linear regression with a sigmoid function. The output can show the probability of which class it belongs to.
 
-The path of the code is Capstone/Classifier/pca&lr.py
+Logistic Regression is one of the most popular methods in building classifier. It can be seen as a combination of a linear regression and an activation function. The output can show the probability of which class it belongs to.
 
-### Second Approach (CNN)
+Code..
 
-One lethal drawback for the Logistic Regression is it can only conduct comparison for specific time node. However, the data generated from upstream process is continuous. 
+### Convolutional Neural Network
 
-Thus, we want to make comparison among those time series line charts generated by our dash board system. The main idea for us to apply convolutional neural network is we want the computer to act like a researcher, and find characteristics for each individual class by itself. 
+One lethal drawback for the Logistic Regression is it can only conduct comparison for a specific time node(D1 VS D1). However, the data generated from upstream process is continuous. Thus, we want to make comparison among those time series line charts generated by our dashboard system. The main idea for us to apply convolutional neural network is the trend of process operator will varies across different kind of cells. The amount of data for each cells may vary as well. Since, we turned multiple nodes into a line chart and applied computer vision to identify similarity. In another words, we tried to let the computer to behave like a researcher, searching for representitive characteristics in different kinds of cell.
 
-In this research, I imitate the architecture of one of the most popular architecture in CNN, the letNet-5. And I made some adjustments shown in the following table.
+For the CNN model in this research, I imitate the architecture of one of the most popular architecture in CNN, the letNet-5. Some adjustments are conducted, The detail architechture of our CNN model is shown in the following table.
 
-|Page|Usage|
-|-|-|
+|Layer(type)|Output Shape|Parameter Number|
+|-|-|-|
+|Conv2D(Activation:ReLu)|(None,332,209,32)|11232|
+|Conv2D(Activation:ReLu)|(None,328,205,32)|25632|
+|MaxPooling|(None,82,51,32)|0|
+|Dropout|(None,78,47,64)|0|
+|Conv2D(Activation:ReLu)|(None,82,51,64)|51264|
+|Conv2D(Activation:ReLu)|(None,78,47,64)|102464|
+|MaxPooling|(None,39,23,64)|0|
+|Dropout|(None,78,47,64)|0|
+|Flatten|57408|0|
+|Dense(Activation:ReLu)|512|29393408|
+|Dropout|512|0|
+|Dense(Activation:SoftMax)|11|0|
 
 
 
