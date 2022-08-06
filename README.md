@@ -88,7 +88,7 @@ For the CNN model in this research, I imitate the architecture of one of the mos
 |Dropout|512|0|
 |Dense(Activation:SoftMax)|11|0|
 
-## Result and Conclusion
+## 4. Result and Conclusion
 
 One of the data sheets is used as the training set for training our model. Another data sheets is used as the test set to check the accuracy of the classifier. Here comes the result. 
 
@@ -105,7 +105,7 @@ Compare with some other result in the research of convolutional neural network. 
 
 <img width="400" height="300" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/defect.png?raw=true">
 
-## Future works
+## 5. Future works
 
 1. Learn SQL and try to connect our dashboard into a SQL database.
 2. Be familiar with HTML and Dash, make the interface more userfriendly.
