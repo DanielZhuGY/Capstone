@@ -3,7 +3,7 @@ Purdue University ChemE Capstone Project. A big data managment tool for biopharm
 
 ## 1. Label Generator
 
-###Barcode Generating Function
+### Barcode Generating Function
 
 Barcode generating function is for generating the label of single sample. Information for one sample is limited, we are able to generate label with the same information as the initial status without doing anyother treatment.
 
@@ -21,7 +21,7 @@ The figure below, is an example of the generation of barcode.
   Figure1.Barcode Example
 </p>
 
-###QRcode Generating Function
+### QRcode Generating Function
 
 QRcode generating function is typically for label generation of a serie of samples. Normally, a series of information consist large amount of repeated information. If we transfer all the information into a QRcode, the graph will be in a messy. Thus, a compress algorithm is applied before 
 
@@ -40,8 +40,11 @@ The dashboard system is based on a library called [Dash](https://dash.plotly.com
 |Page|Usage|
 |-|-|
 |Time series line chart|Empty samples are dropped automatically. Is able to conduct comparison between both different samples as well as different process conditions|
-|Correlation coefficient heat map|Illustrate the correlation coefficient heat map between each two parameters.|
-
+|Correlation coefficient heat map|Illustrate the correlation coefficient heat map between each two parameters.|</br>
+<p align="center">
+  <img width="250" height="200" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/linechart.png?raw=true">
+  <img width="80" height="80" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/coef.png?raw=true">
+</p>
 
 ## 3. Classifer
 
