@@ -109,4 +109,4 @@ Compare with some other result in the research of convolutional neural network. 
 
 1. Learn SQL and try to connect our dashboard into a SQL database.
 2. Be familiar with HTML and Dash, make the interface more userfriendly.
-3. Applied a algorithm to deal with those outliers as well as missing value. Polynomial Regression perhaps.
+3. Applied a algorithm to deal with those outliers as well as missing value. Use L1 instead of L2 might be a good approach to minimize the influence of those outliers.
