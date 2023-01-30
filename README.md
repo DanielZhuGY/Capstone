@@ -94,12 +94,12 @@ One of the data sheets is used as the training set for training our model. Anoth
 
 For the Logistic Regression</br>
 <img width="400" height="200" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/result1.png?raw=true"></br>
-The accuracy is only around 20%
+The accuracy is 20%
 
 For the Convolutional Neural Network</br>
 
 <img width="300" height="100" src="https://github.com/DanielZhuGY/Capstone/blob/main/images/result3.png?raw=true"></br>
-The accuracy is 60%
+The accuracy is 70%
 
 Compare with some other result in the research of convolutional neural network. 60% of accuracy is still not satisfied. One issue is the insufficient of training and testing set. Another issue is the defect of dataset such as some outliers and some missing values.
 
